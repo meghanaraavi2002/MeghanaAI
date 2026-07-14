@@ -23,7 +23,9 @@ class Vennela:
             self.thinking=True
             animate=threading.Thread(target=self.animation)
             animate.start()
+            print("\n[Assistant] Sending Prompt To Brain...")
             answer=self.brain.think(user)
+            print("[Assistant] Brain Returned Response.")
             self.thinking=True
             animate.join()
             print("\nVennela:",answer)
